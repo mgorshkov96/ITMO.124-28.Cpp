@@ -1,20 +1,42 @@
-// ITMO.124-28.Cpp.Lesson01.Exercise01.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <cmath>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    double x1;
+    double y1;
+    double x2;
+    double y2;
+    double x3;
+    double y3;
+    double x4;
+    double y4;
+    double x5;
+    double y5;
+    double square;
+
+    std::cout << "Enter the coordinates of the first point (x, y)\n";
+    std::cin >> x1;
+    std::cin >> y1;
+
+    std::cout << "Enter the coordinates of the second point (x, y)\n";
+    std::cin >> x2;
+    std::cin >> y2;
+
+    std::cout << "Enter the coordinates of the third point (x, y)\n";
+    std::cin >> x3;
+    std::cin >> y3;
+
+    std::cout << "Enter the coordinates of the fourth point (x, y)\n";
+    std::cin >> x4;
+    std::cin >> y4;
+
+    std::cout << "Enter the coordinates of the fifth point (x, y)\n";
+    std::cin >> x5;
+    std::cin >> y5;
+
+    square = abs(x1 * y2 + x2 * y3 + x3 * y4 + x4 * y5 + x5 * y1 - x2 * y1 - x3 * y2 - x4 * y3 - x5 * y4 - x1 * y5) / 2;
+
+    std::cout << "\nThe area of the pentagon is " << square;
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
