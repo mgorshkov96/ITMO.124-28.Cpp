@@ -1,20 +1,41 @@
-// ITMO.124-28.Cpp.Lesson05.Exercise02.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+
+int* max_vect(int size, const int* firstArr, const int* secondArr);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int myArray1[] = { 1,2,3,4,5,6,7,2 };
+    int myArray2[] = { 7,6,5,4,3,2,1,3 };
+    int arraySize = sizeof(myArray1) / sizeof(myArray1[0]); 
+    int* maxValArr; 
+
+    maxValArr = max_vect(arraySize, myArray1, myArray2); 
+    
+    for (int i = 0; i < arraySize; i++)
+    {
+        std::cout << maxValArr[i] << " ";
+    }
+        
+    std::cout << std::endl;
+
+    delete[]maxValArr; 
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+int* max_vect(int size, const int* firstArr, const int* secondArr)
+{
+    int* maxArr = new int[size];
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    for (int i = 0; i < size; i++)
+    {
+        if (firstArr[i] > secondArr[i])
+        {
+            maxArr[i] = firstArr[i];
+        }
+        else
+        {
+            maxArr[i] = secondArr[i];
+        }
+    }
+
+    return maxArr;
+}
