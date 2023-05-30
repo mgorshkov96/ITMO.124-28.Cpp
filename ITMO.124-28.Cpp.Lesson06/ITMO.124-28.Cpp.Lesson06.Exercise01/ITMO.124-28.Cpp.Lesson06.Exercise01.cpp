@@ -19,4 +19,6 @@ int main()
     fout << buffer;
     
     fout.close();
+
+    return 0;
 }
