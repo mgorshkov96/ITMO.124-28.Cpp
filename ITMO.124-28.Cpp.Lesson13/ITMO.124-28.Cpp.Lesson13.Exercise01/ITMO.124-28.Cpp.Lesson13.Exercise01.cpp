@@ -21,8 +21,9 @@ int main()
 	unsigned int teacher_work_time = 40;
 	Human* tch = new Teacher("Sergeev", "Dmitriy", "Sergeevich", teacher_work_time);
 
-	stud->print();
-	tch->print();
+	Human* humans[] = { stud, tch };
+	humans[0]->print();
+	humans[1]->print();
 	
 	delete stud;
 	delete tch;
